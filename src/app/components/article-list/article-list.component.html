@@ -1,0 +1,15 @@
+<section>
+  @for (article of articles; track $index) { @if(article.isPublished){
+  <div [ngClass]="{ 'popular-article': article.likeCount > 200 }">
+    <h1>
+      {{ article.title }}
+    </h1>
+    <img [src]="article.image" alt="" />
+    <p class="p"><strong>contenu</strong> : {{ article.content }}</p>
+    <p class="p"><strong>date</strong> : {{ article.createdAt }}</p>
+    <p>❤️ : {{ article.likeCount }}</p>
+  </div>
+  } @else{pas d'article} } @empty {
+  <h1>Aucun article disponible</h1>
+  }
+</section>
